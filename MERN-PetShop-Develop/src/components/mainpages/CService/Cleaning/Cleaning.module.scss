@@ -1,0 +1,49 @@
+//general
+.hotel-container{
+    background-color: antiquewhite;
+    display: flex;   
+    margin: 0 40px;
+
+}
+.hotel-btn{
+    border-bottom: 1px solid black;
+    // border-radius: 4px;
+    width: 240px;
+    text-align: left;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.hotel-btn p{
+    margin: 0;
+    padding: 0;
+}
+
+//left
+.hotel-left{
+    flex: 1;
+    list-style-type: disc;
+    background-color: rgb(227, 227, 227);
+}
+.service-list ul li{
+    list-style-type: disc;
+    margin-left: 40px;
+}
+
+
+//right
+.service-price ul li{
+    margin-left: 40px;
+    list-style-type: disc;
+}
+.hotel-right{
+    flex: 2;
+    list-style-type: disc;
+
+}
+.hotel-right img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

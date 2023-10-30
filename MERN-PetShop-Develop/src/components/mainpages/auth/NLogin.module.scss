@@ -1,0 +1,41 @@
+.login-page {
+    max-width: 500px;
+    border: 2px solid #4c372b;
+    border-radius: 4px;
+    padding: 30px;
+    margin: 50px auto;
+    box-shadow: 0px 2px 2px #4c372b;
+    /* background-color: #524eb7; */
+}
+.register-form {
+}
+
+.input-info input {
+    width: 100%;
+}
+.info-name {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14px;
+}
+.info-label {
+    display: inline;
+}
+.login-page form .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.login-page form button {
+    width: 150px;
+    background: #524eb7;
+    color: white;
+    border-radius: 19px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.login-btn{
+    color: orange;
+    letter-spacing: 1.3px;
+    text-transform: uppercase
+}

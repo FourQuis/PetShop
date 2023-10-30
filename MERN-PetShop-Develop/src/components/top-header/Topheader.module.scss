@@ -1,0 +1,30 @@
+.login-btn {
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+.label {
+    margin-left: 10px;
+    justify-content: center;
+}
+.list-topheader {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+.list-topheader  li{
+    margin: 0 20px;
+}
+.row2-topheader {
+    z-index: 10;
+    display: flex;
+    flex-direction: column  ;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: auto;
+}
+.row2-topheader p{
+    margin: 0;
+    padding: 0;
+}
