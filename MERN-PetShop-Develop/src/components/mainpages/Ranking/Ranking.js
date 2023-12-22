@@ -17,7 +17,7 @@ function Ranking() {
                 <div className={cx('text-rank1')}>
                     <h4>puddle</h4>
                     <p>
-                        小型犬No.1といわれるほど知能が高いことで知られています。とにかくフレンドリーで明るい性格をしており、飼い主さんだけでなく、初めて会う人や小さな子供まで誰に対しても人懐っこく、優しく接することができます。抜け毛や体臭も少なく、比較的お世話も手が掛からないことから、初めてペットをお迎えする方にぴったりです。またバッグに入れての移動も容易なため、カフェや旅行など色々な場所に一緒にお出かけしたい、という方におすすめです。
+                    Nó nổi tiếng với trí thông minh cao đến mức được cho là chú chó nhỏ số 1. Chúng có tính cách thân thiện, vui vẻ và có thể thân thiện, nhẹ nhàng với mọi người, kể cả không chỉ chủ nhân mà cả những người chúng gặp lần đầu và trẻ nhỏ. Chúng rụng ít lông hơn, ít mùi cơ thể hơn và tương đối dễ chăm sóc, khiến chúng trở nên hoàn hảo cho những người lần đầu nuôi thú cưng. Nó cũng dễ dàng mang theo trong túi xách của bạn, vì vậy nó được khuyên dùng cho những người muốn cùng họ đi chơi đến nhiều địa điểm khác nhau như quán cà phê và du lịch.。
                     </p>
                 </div>
             </div>
@@ -32,7 +32,7 @@ function Ranking() {
                     <div className={cx('text-rank-other')}>
                         <h4>Hussky</h4>
                         <p>
-                            ふさふさの毛と可愛らしい表情をもつ豆柴。柴犬のイメージ通り、飼い主さんに忠実でとっても懐きやすいことで知られています。また、日本犬なので四季の変化にも強く、小さめのサイズながら骨格はしっかりとしていて健康的な子が多いです。
+                        Mameshiba có bộ lông bông xù và biểu cảm dễ thương. Như Shiba Inu được biết đến, nó được biết đến là người trung thành với chủ nhân và rất dễ hòa đồng. Ngoài ra, vì là chó Nhật Bản nên chúng có khả năng chống chọi với sự thay đổi theo mùa, tuy có kích thước nhỏ nhưng nhiều con trong số chúng có xương chắc khỏe và khỏe mạnh.
                         </p>
                     </div>
                 </div>
@@ -45,7 +45,7 @@ function Ranking() {
                     <div className={cx('text-rank-other')}>
                         <h4>Pug</h4>
                         <p>
-                            一瞬で家族を和ませるようなおどけた表情が魅力的なフレンチブルドッグ。いつの間にか飼い主さんに寄り添ってうたた寝をするような、とっても穏やかでマイペースな子が多いです。人懐っこくおとなしい性格をしているので、初めてペットをお迎えする方にもおすすめです。
+                        Chó bulgie Pháp có biểu cảm vui tươi hấp dẫn, ngay lập tức khiến gia đình ấm áp. Nhiều con rất bình tĩnh và đi theo tốc độ của riêng mình, đôi khi còn rúc vào người chủ và chợp mắt. Chúng có tính cách thân thiện và ngoan ngoãn, vì vậy chúng cũng được khuyên dùng cho những người lần đầu tiên mang theo thú cưng.
                         </p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ function Ranking() {
                     <div className={cx('text-rank-other')}>
                         <h4>Marupu</h4>
                         <p>
-                            トイプードルの「賢く甘えん坊な性格」と、マルチーズの「大人しく人懐こい性格」を受け継いだ穏やかな性格の子が多いです。遊んでいるときなどは元気いっぱいでやんちゃな一面も見せてくれますが、家族思いで温厚な子が多いです。{' '}
+                        Nhiều chú chó con có tính cách hiền lành, thừa hưởng “tính cách thông minh và ngọt ngào” của chó Toy Poodle và “tính cách trầm lặng và thân thiện” của chó Malese. Mặc dù thể hiện khía cạnh năng động, tinh nghịch khi vui chơi nhưng hầu hết các em đều hướng về gia đình và hiền lành.{' '}
                         </p>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ function Ranking() {
                     <div className={cx('text-rank-other')}>
                         <h4>Miniature Poodle</h4>
                         <p>
-                            ふさふさの毛と可愛らしい表情をもつ豆柴。柴犬のイメージ通り、飼い主さんに忠実でとっても懐きやすいことで知られています。また、日本犬なので四季の変化にも強く、小さめのサイズながら骨格はしっかりとしていて健康的な子が多いです。
+                        Mameshiba có bộ lông bông xù và biểu cảm dễ thương. Như Shiba Inu được biết đến, nó được biết đến là người trung thành với chủ nhân và rất dễ hòa đồng. Ngoài ra, vì là chó Nhật Bản nên chúng có khả năng chống chọi với sự thay đổi theo mùa, tuy có kích thước nhỏ nhưng nhiều con trong số chúng có xương chắc khỏe và khỏe mạnh.
                         </p>
                     </div>
                 </div>
@@ -100,7 +100,7 @@ function Ranking() {
                     <div className={cx('text-rank-other')}>
                         <h4>Kanihen</h4>
                         <p>
-                            短い足でちょこちょこ歩く姿がかわいいカニヘンダックスフンド。とても陽気で人懐こい性格をしています。小柄な身体ながら、非常にエネルギッシュで遊ぶことが大好きなので、お子様の遊び相手にもぴったりです。
+                        Gà mái dachshund có cách đi lại dễ thương với đôi chân ngắn. Anh ấy có tính cách rất vui vẻ và thân thiện. Mặc dù có vóc dáng nhỏ bé nhưng chúng rất năng động và thích chơi đùa, khiến chúng trở thành người bạn đồng hành hoàn hảo của trẻ em.。
                         </p>
                     </div>
                 </div>
@@ -113,7 +113,7 @@ function Ranking() {
                     <div className={cx('text-rank-other')}>
                         <h4>Chiwapu</h4>
                         <p>
-                            チワワの「愛情深く忠実な性格」と、トイプードルの「社交性が高く、落ち着いた性格」を受け継いだ、陽気で賢い子が多いといわれています。非常にしつけがしやすく、初めてペットを飼う方におすすめの犬種です。
+                        Người ta nói rằng nhiều em trong số chúng vui vẻ và thông minh, thừa hưởng “tính cách tình cảm và trung thành” của Chihuahua và “tính cách rất hòa đồng và điềm tĩnh” của Toy Poodle. Giống chó này rất dễ huấn luyện và được khuyên dùng cho những người lần đầu nuôi thú cưng.
                         </p>
                     </div>
                 </div>
@@ -126,8 +126,8 @@ function Ranking() {
                     <div className={cx('text-rank-other')}>
                         <h4>Chiwawa</h4>
                         <p>
-                            世界で一番小さい犬として有名なチワワ。うるんだ大きな瞳と、耳・首・四肢・尾の飾り毛が特徴です。
-                            見かけに反して動きが機敏で、とにかく元気いっぱい。とても愛情深く、飼い主さんに対して忠誠を尽くすタイプです。{' '}
+                        Chihuahua nổi tiếng là loài chó nhỏ nhất thế giới. Nó có đặc điểm là đôi mắt to, ẩm ướt và lông trang trí trên tai, cổ, tứ chi và đuôi.
+                             Trái ngược với vẻ ngoài, nó nhanh nhẹn và tràn đầy năng lượng. Chúng rất tình cảm và trung thành với chủ nhân.。{' '}
                         </p>
                     </div>
                 </div>
