@@ -16,7 +16,6 @@ function Products() {
     const [callback, setCallback] = state.productsAPI.callback;
     const [loading, setLoading] = useState(false);
     const [isCheck, setIsCheck] = useState(false);
-
     const handleCheck = (id) => {
         products.forEach((product) => {
             if (product._id === id) product.checked = !product.checked;
@@ -86,7 +85,6 @@ function Products() {
                     <button onClick={deleteAll}>delete all</button>
                 </div>
             )}
-
             <div className="products">
                 {products.map((product) => {
                     return (

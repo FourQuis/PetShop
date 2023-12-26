@@ -15,5 +15,4 @@ function LoadMore() {
         </div>
     )
 }
-
 export default LoadMore

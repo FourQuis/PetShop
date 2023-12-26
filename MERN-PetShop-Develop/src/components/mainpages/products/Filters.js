@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalState } from '../../../GlobalState';
-
+import searchIcon from './download.png';
 function Filters() {
   const state = useContext(GlobalState);
   const [categories] = state.categoriesAPI.categories;
@@ -27,14 +27,15 @@ function Filters() {
           ))}
         </select>
       </div>
-
+      
       <input
         type="text"
         value={search}
         placeholder="Search product here"
         onChange={(e) => setSearch(e.target.value.toLowerCase())}
+        
       />
-
+        <button > <img class="icon-seach" src={searchIcon} alt="Search" /></button>
       <div className="row sort">
         {/* <span>Xếp theo: </span> */}
         <select value={sort} onChange={(e) => setSort(e.target.value)}>

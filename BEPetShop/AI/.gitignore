@@ -1,0 +1,13 @@
+node_modules
+/yarn.lock
+yarn.lock
+*.lock
+/*.lock
+*.env
+/*.env
+.env
+/.env
+.env
+.env
+.package-lock.json
+docker-compose.yml

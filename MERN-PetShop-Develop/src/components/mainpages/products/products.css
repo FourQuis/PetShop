@@ -9,7 +9,12 @@
 
 /* ----------- Product Item ----------------- */
 @import url('../utils/productItem/productItem.css');
-
+.icon-seach {
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  margin-right: 195px;
+}
 .delete-all {
   text-align: right;
   margin: 20px;
