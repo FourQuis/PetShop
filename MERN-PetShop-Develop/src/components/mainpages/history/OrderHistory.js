@@ -15,18 +15,18 @@ function OrderHistory() {
   const [token] = state.token;
   const [page, setPage] = useState(2);
   const [me, setMe] = useState();
-  //const [myorder,setMyorder] = useState([])
-  // useEffect(() => {
-  //     (async ()=>{
-  //         const res = await axios.get(
-  //             '/api/orders',
-  //             {
-  //               headers: { Authorization: token },
-  //             }
-  //         );
-  //         //console.log(res.data)
-  //     })()
-  // },[token])
+  const [myorder,setMyorder] = useState([])
+  useEffect(() => {
+      (async ()=>{
+          const res = await axios.get(
+              '/api/orders',
+              {
+                headers: { Authorization: token },
+              }
+          );
+          //console.log(res.data)
+      })()
+  },[token])
 
   useEffect(() => {
     if (token) {

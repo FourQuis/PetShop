@@ -20,16 +20,9 @@ class APIfeatures {
       /\b(gte|gt|lt|lte|regex)\b/g,
       (match) => "$" + match
     );
-
-    //    gte = greater than or equal = lớn hơn hoặc bằng
-    //    lte = lesser than or equal = nhỏ hơn hoặc bằng
-    //    lt = lesser than = ít hơn
-    //    gt = greater than = lớn hơn
-    // regex = search to nung sue
     this.query.find(JSON.parse(queryStr));
     return this;
   }
-
   sorting() {
     if (this.queryString.sort) {
       const sortBy = this.queryString.sort.split(",").join(" ");

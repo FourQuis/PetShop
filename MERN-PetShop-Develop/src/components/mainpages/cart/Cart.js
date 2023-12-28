@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { GlobalState } from '../../../GlobalState';
 import axios from 'axios';
-// import PaypalButton from './PaypalButton';
-//import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import PaypalButton from './PaypalButton';
+// import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Link } from 'react-router-dom';
 
 function Cart() {
@@ -134,7 +134,7 @@ function Cart() {
 
         <div className="total">
           <h3>Total: $ {total}</h3>
-          {/* <PaypalButton total={total} tranSuccess={tranSuccess} /> */}
+          <PaypalButton total={total} tranSuccess={tranSuccess} />
           <Link
             to="/checkout"
             className="checkout"

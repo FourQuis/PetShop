@@ -10,8 +10,9 @@ const paypal = require('paypal-rest-sdk')
 //Paypal Config
 paypal.configure({
     'mode': 'sandbox', //sandbox or live
-    'client_id': process.env.PAYPAL_CLIENT_ID,
-    'client_secret': process.env.PAYPAL_CLIENT_SECRET
+    'client_id': 'Afne3QxAj6Mf7CrHhuZDr9c41bHpyuU1P0aXsS8GcpiucjQMUAmKXWb1i_w5UM9Qw0kbHdVZLbV_vYNE'
+    ,
+    'client_secret': 'ENClMwG8NU5hN3XwQVX-EYLx5BawpEDUUrgEv3aZOSP5MeZIpbGFbthIBPLfBloYqYaGhrOJ4Bx5iuCf'
 })
 
 
@@ -60,7 +61,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log('Server is running on port', PORT)
 })

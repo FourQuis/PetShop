@@ -11,8 +11,8 @@ const paypalCtrl = {
                     "payment_method": "paypal"
                 },
                 "redirect_urls": {
-                    "return_url": "http://pet.kreazy.me/api/paypal/success",
-                    "cancel_url": "http://pet.kreazy.me/api/paypal/cancel"
+                    "return_url": "http://localhost:3000/api/paypal/success",
+                    "cancel_url": "http://localhost:3000/api/paypal/cancel"
                 },
                 "transactions": [{
                     "item_list": {
@@ -52,6 +52,7 @@ const paypalCtrl = {
     },
     success: async (req, res) => {
         const payerId = req.query.PayerID;
+        console.log(res);
         const paymentId = req.query.paymentId;
         const execute_payment_json = {
             "payer_id": payerId

@@ -75,7 +75,7 @@ const Checkout = () => {
         );
         setLoading(false);
         setProcess(orders.data.order);
-        //alert('Bạn đã đặt hàng thành công.');
+        alert('Bạn đã đặt hàng thành công.');
         setCart([]);
         addToCart([]);
         history('/processed');

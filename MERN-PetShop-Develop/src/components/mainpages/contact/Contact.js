@@ -30,14 +30,14 @@ function Contact() {
                     <FontAwesomeIcon icon={faEnvelope} className={cx('contactIcon')} />
                     <div className={cx('contact-ss')}>
                         <strong>Email:</strong>
-                        <p>nguyen1522002@gmail.com</p>
+                        <p>hungnguyen@gmail.com</p>
                     </div>
                 </div>
                 <div className={cx('contactInfoItem')}>
                     <FontAwesomeIcon icon={faEnvelope} className={cx('contactIcon')} />
                     <div className={cx('contact-ss')}>
                         <strong>Map:</strong>
-                        <p>nguyen1522002@gmail.com</p>
+                        <p>hungnguyen@gmail.com</p>
                     </div>
                 </div>
             </div>

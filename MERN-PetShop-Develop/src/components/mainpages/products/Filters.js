@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { GlobalState } from '../../../GlobalState';
 import searchIcon from './download.png';
+import axios from 'axios';
+
 function Filters() {
   const state = useContext(GlobalState);
   const [categories] = state.categoriesAPI.categories;
@@ -8,18 +10,44 @@ function Filters() {
   const [category, setCategory] = state.productsAPI.category;
   const [sort, setSort] = state.productsAPI.sort;
   const [search, setSearch] = state.productsAPI.search;
-  console.log(search)
+
+  const fileInputRef = useRef(null);
+
   const handleCategory = (e) => {
     setCategory(e.target.value);
     setSearch('');
+    
   };
 
+  const handleIconClick = () => {
+    // Trigger click on the file input element
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    try {
+        const formData = new FormData();
+        formData.append('image', file);
+      
+        // Update the URL to your Flask server endpoint for file uploads
+      const response =  await axios.post('http://localhost:5001/api/upload', formData);
+      setSearch(response.data.predicted_class)
+        console.log('Image uploaded successfully');
+    } catch (error) {
+        console.error('Error uploading image:', error.message);
+    }
+};
   return (
     <div className="filter_menu">
       <div className="row">
-        {/* <span>Lọc: </span> */}
         <select name="category" value={category} onChange={handleCategory}>
-          <option value="">All Category</option>
+          <option value="">Tất cả danh mục</option>
           {categories.map((category) => (
             <option value={'category=' + category._id} key={category._id}>
               {category.name}
@@ -27,23 +55,34 @@ function Filters() {
           ))}
         </select>
       </div>
-      
+
       <input
         type="text"
         value={search}
-        placeholder="Search product here"
+        placeholder="Tìm kiếm sản phẩm"
         onChange={(e) => setSearch(e.target.value.toLowerCase())}
-        
       />
-        <button > <img class="icon-seach" src={searchIcon} alt="Search" /></button>
+
+      {/* Hidden file input for image upload */}
+      <input
+        type="file"
+        name = "image"
+        ref={fileInputRef}
+        style={{ display: 'none' }}
+        onChange={handleFileChange}
+      />
+      
+      <button onClick={handleIconClick}>
+        <img className="icon-seach" src={searchIcon} alt="Search" />
+      </button>
+
       <div className="row sort">
-        {/* <span>Xếp theo: </span> */}
         <select value={sort} onChange={(e) => setSort(e.target.value)}>
-          <option value="">New product</option>
-          <option value="sort=oldest">Old product</option>
-          <option value="sort=-sold">Hot product</option>
-          <option value="sort=-price">Price: expensive-cheap</option>
-          <option value="sort=price">price: cheap-expensive</option>
+          <option value="">Sản phẩm mới</option>
+          <option value="sort=oldest">Sản phẩm cũ</option>
+          <option value="sort=-sold">Sản phẩm nổi bật</option>
+          <option value="sort=-price">Giá: cao đến thấp</option>
+          <option value="sort=price">Giá: thấp đến cao</option>
         </select>
       </div>
     </div>

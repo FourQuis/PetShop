@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dog</title>
+</head>
+<body>
+  <h1>Phân loại cho</h1>
+  <form method="POST" action="/api/upload" enctype="multipart/form-data">
+    <input type="file" name="image">
+    <input type="submit" value="Upload và phân loại">
+  </form>
+ 
+  <div>
+    <img id="uploaded_image" src="" alt="Uploaded Image">
+  </div>
+
+<ul id="image_list">
+
+  {% for image_file in image_files %}
+    <li><img src="{{ url_for('static', filename='uploads/' ~ predicted_class ~ '/' ~ image_file) }}" alt="Uploaded Image"></li>
+  {% endfor %}
+</ul>
+<script>
+  const imageInput = document.querySelector('input[type="file"]');
+  const uploadedImage = document.getElementById('uploaded_image');
+  const imageList = document.getElementById('image_list');
+
+  imageInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        uploadedImage.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    } else {
+      uploadedImage.src = '';
+    }
+  });
+</script
+  {{ image_list | safe }}
+</body>
+</html>
