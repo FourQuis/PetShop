@@ -26,7 +26,7 @@ describe('Login Test', () => {
 
   it('should login successfully', async () => {
     // Điều hướng đến trang web cần kiểm thử
-    await page.goto('http://localhost:3000/nlogin');
+    await page.goto('http://13.210.255.94:3000/nlogin');
 
     // Điền thông tin đăng nhập và ấn nút đăng nhập
     await page.fill('input[name="email"]', 'admin12@gmail.com');

@@ -1,13 +1,13 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-
+import apidomin from './config'
 function CategoriesAPI() {
     const [categories, setCategories] = useState([])
     const [callback, setCallback] = useState(false)
 
     useEffect(() =>{
         const getCategories = async () =>{
-            const res = await axios.get('/api/category')
+            const res = await axios.get(apidomin+'/api/category')
             setCategories(res.data)
         }
 

@@ -31,7 +31,7 @@ const app = express();
 app.use('/api', createProxyMiddleware({ target: 'http://www.example.org', changeOrigin: true }));
 app.listen(3000);
 
-// http://localhost:3000/api/foo/bar -> http://www.example.org/api/foo/bar
+// http://13.210.255.94:3000/api/foo/bar -> http://www.example.org/api/foo/bar
 ```
 
 ```typescript
@@ -45,7 +45,7 @@ const app = express();
 app.use('/api', createProxyMiddleware({ target: 'http://www.example.org', changeOrigin: true }));
 app.listen(3000);
 
-// http://localhost:3000/api/foo/bar -> http://www.example.org/api/foo/bar
+// http://13.210.255.94:3000/api/foo/bar -> http://www.example.org/api/foo/bar
 ```
 
 _All_ `http-proxy` [options](https://github.com/nodejitsu/node-http-proxy#options) can be used, along with some extra `http-proxy-middleware` [options](#options).
@@ -133,9 +133,9 @@ const options = {
     '^/api/remove/path': '/path', // remove base path
   },
   router: {
-    // when request.headers.host == 'dev.localhost:3000',
+    // when request.headers.host == 'dev.13.210.255.94:3000',
     // override target 'http://www.example.org' to 'http://localhost:8000'
-    'dev.localhost:3000': 'http://localhost:8000',
+    'dev.13.210.255.94:3000': 'http://localhost:8000',
   },
 };
 
@@ -234,9 +234,9 @@ Providing an alternative way to decide which requests should be proxied; In case
   // Use `host` and/or `path` to match requests. First match will be used.
   // The order of the configuration matters.
   router: {
-      'integration.localhost:3000' : 'http://localhost:8001',  // host only
-      'staging.localhost:3000'     : 'http://localhost:8002',  // host only
-      'localhost:3000/api'         : 'http://localhost:8003',  // host + path
+      'integration.13.210.255.94:3000' : 'http://localhost:8001',  // host only
+      'staging.13.210.255.94:3000'     : 'http://localhost:8002',  // host only
+      '13.210.255.94:3000/api'         : 'http://localhost:8003',  // host + path
       '/rest'                      : 'http://localhost:8004'   // path only
   }
 

@@ -4,6 +4,7 @@ import UserAPI from './api/UserAPI';
 import CategoriesAPI from './api/CategoriesAPI';
 import TypeApi from './api/TypeAPI';
 import OrderApi from './api/OrderAPI';
+import apidomin from  './api/config'
 
 import axios from 'axios';
 
@@ -14,13 +15,15 @@ export const DataProvider = ({ children }) => {
 
     useEffect(() => {
         const firstLogin = localStorage.getItem('firstLogin');
-        if (firstLogin) {
+        const loginSeson = sessionStorage.getItem('refreshtoken');
+        if ((firstLogin) || (loginSeson)) {
             const refreshToken = async () => {
-                const res = await axios.get('/user/refresh_token');
-
+                const config = {
+                    headers: { Authorization: ` ${loginSeson}` }
+                };
+                const res = await axios.get(apidomin+'/user/refresh_token',config);
                 setToken(res?.data?.accesstoken);
                 // console.log(res);
-
                 setTimeout(() => {
                     refreshToken();
                 }, 10 * 60 * 1000);

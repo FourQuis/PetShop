@@ -525,7 +525,7 @@ interface TestConfig {
    *     reuseExistingServer: !process.env.CI,
    *   },
    *   use: {
-   *     baseURL: 'http://localhost:3000/',
+   *     baseURL: 'http://13.210.255.94:3000/',
    *   },
    * });
    * ```
@@ -537,7 +537,7 @@ interface TestConfig {
    * import { test } from '@playwright/test';
    *
    * test('test', async ({ page }) => {
-   *   // This will result in http://localhost:3000/foo
+   *   // This will result in http://13.210.255.94:3000/foo
    *   await page.goto('/foo');
    * });
    * ```
@@ -1816,7 +1816,7 @@ export interface FullConfig<TestArgs = {}, WorkerArgs = {}> {
    *     reuseExistingServer: !process.env.CI,
    *   },
    *   use: {
-   *     baseURL: 'http://localhost:3000/',
+   *     baseURL: 'http://13.210.255.94:3000/',
    *   },
    * });
    * ```
@@ -1828,7 +1828,7 @@ export interface FullConfig<TestArgs = {}, WorkerArgs = {}> {
    * import { test } from '@playwright/test';
    *
    * test('test', async ({ page }) => {
-   *   // This will result in http://localhost:3000/foo
+   *   // This will result in http://13.210.255.94:3000/foo
    *   await page.goto('/foo');
    * });
    * ```
@@ -4311,11 +4311,11 @@ export interface PlaywrightTestOptions {
    * it takes the base URL in consideration by using the
    * [`URL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) constructor for building the corresponding URL.
    * Unset by default. Examples:
-   * - baseURL: `http://localhost:3000` and navigating to `/bar.html` results in `http://localhost:3000/bar.html`
-   * - baseURL: `http://localhost:3000/foo/` and navigating to `./bar.html` results in
-   *   `http://localhost:3000/foo/bar.html`
-   * - baseURL: `http://localhost:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
-   *   `http://localhost:3000/bar.html`
+   * - baseURL: `http://13.210.255.94:3000` and navigating to `/bar.html` results in `http://13.210.255.94:3000/bar.html`
+   * - baseURL: `http://13.210.255.94:3000/foo/` and navigating to `./bar.html` results in
+   *   `http://13.210.255.94:3000/foo/bar.html`
+   * - baseURL: `http://13.210.255.94:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
+   *   `http://13.210.255.94:3000/bar.html`
    *
    * **Usage**
    *
@@ -4325,7 +4325,7 @@ export interface PlaywrightTestOptions {
    * export default defineConfig({
    *   use: {
    *     /* Base URL to use in actions like `await page.goto('/')`. *\/
-   *     baseURL: 'http://localhost:3000',
+   *     baseURL: 'http://13.210.255.94:3000',
    *   },
    * });
    * ```

@@ -11,7 +11,7 @@ import { AiOutlineHistory, AiOutlineHeart } from 'react-icons/ai';
 import Logo from './icon/logo-white-1.svg';
 import { gsap } from 'gsap';
 import { Route, Router } from 'react-router-dom';
-
+import apidomin from '../../api/config'
 function Header() {
     const state = useContext(GlobalState);
     const [isLogged] = state.userAPI.isLogged;
@@ -31,8 +31,9 @@ function Header() {
     };
 
     const logoutUser = async () => {
-        await axios.get('/user/logout');
+        await axios.get('apidomin+/user/logout');
         localStorage.removeItem('firstLogin');
+        sessionStorage.removeItem('refreshtoken');
         window.location.href = '/';
     };
     const ToggleSidebar = () => {

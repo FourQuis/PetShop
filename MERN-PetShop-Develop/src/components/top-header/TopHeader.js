@@ -11,6 +11,7 @@ import styles from './Topheader.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { BsCart3 } from 'react-icons/bs';
+import apidomin from '../../api/config'
 
 // import Button from '../Button';
 
@@ -51,8 +52,9 @@ export const TopHeader = () => {
     };
 
     const logoutUser = async () => {
-        await axios.get('/user/logout');
+        await axios.get(apidomin+'/user/logout');
         localStorage.removeItem('firstLogin');
+        sessionStorage.removeItem('refreshtoken')
         window.location.href = '/';
     };
     //

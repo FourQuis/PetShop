@@ -24,7 +24,7 @@ function getTargetFromProxyTable(req, table) {
     for (const [key] of Object.entries(table)) {
         if (containsPath(key)) {
             if (hostAndPath.indexOf(key) > -1) {
-                // match 'localhost:3000/api'
+                // match '13.210.255.94:3000/api'
                 result = table[key];
                 logger.debug('[HPM] Router table match: "%s"', key);
                 break;
@@ -32,7 +32,7 @@ function getTargetFromProxyTable(req, table) {
         }
         else {
             if (key === host) {
-                // match 'localhost:3000'
+                // match '13.210.255.94:3000'
                 result = table[key];
                 logger.debug('[HPM] Router table match: "%s"', host);
                 break;

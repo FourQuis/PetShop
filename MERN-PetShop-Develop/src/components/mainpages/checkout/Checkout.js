@@ -4,6 +4,7 @@ import { GlobalState } from '../../../GlobalState';
 import axios from 'axios';
 import 'font-awesome/css/font-awesome.min.css';
 import Loading from '../utils/loading/Loading';
+import apidomin from '../../../api/config'
 
 const initialState = {
     // orderItems: [
@@ -36,7 +37,7 @@ const Checkout = () => {
         setOrder({ ...order, [name]: value });
     };
     const addToCart = async (cart) => {
-        await axios.patch(
+        await axios.patch(apidomin+
             '/user/addcart',
             { cart },
             {
@@ -66,7 +67,7 @@ const Checkout = () => {
             shippingCode: order.shippingCode,
         };
         console.log(re);
-        const orders = await axios.post(
+        const orders = await axios.post(apidomin+
             '/api/orders',
             { ...re },
             {

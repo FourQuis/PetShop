@@ -74,7 +74,7 @@ function AdvSafety() {
                 <div className={cx('more-news')}>
                     <ul className={cx('more-news-list')}>
                         <li className={cx('more-news-item')}>
-                            <a href="http://localhost:3000/" target="blank" className={cx('news-a')}>
+                            <a href="http://13.210.255.94:3000/" target="blank" className={cx('news-a')}>
                                 <div className={cx('badge-new')}>
                                     <span>New!</span>
                                 </div>

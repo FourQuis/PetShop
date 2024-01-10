@@ -8,6 +8,7 @@ import axios from 'axios';
 import FeedbackItem from './FeedbackItem';
 import Rating from 'react-rating';
 import gsap from 'gsap';
+import apidomin from '../../../api/config'
 
 function DetailProduct() {
     const params = useParams();
@@ -33,7 +34,7 @@ function DetailProduct() {
         if (params.id) {
             const getFeedback = async () => {
                 try {
-                    const res = await axios.get(`/api/products/${params.id}`);
+                    const res = await axios.get(apidomin+`/api/products/${params.id}`);
                     setFeedback(res.data.feedbacks);
                 } catch (err) {
                     alert(err.response.data.msg);

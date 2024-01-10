@@ -4,7 +4,7 @@ import axios from 'axios';
 import PaypalButton from './PaypalButton';
 // import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { Link } from 'react-router-dom';
-
+import apidomin from '../../../api/config'
 function Cart() {
   const state = useContext(GlobalState);
   //console.log(state.userAPI);
@@ -27,7 +27,7 @@ function Cart() {
   }, [cart]);
 
   const addToCart = async (cart) => {
-    await axios.patch(
+    await axios.patch(apidomin+
       '/user/addcart',
       { cart },
       {
@@ -38,11 +38,9 @@ function Cart() {
 
   const increment = (id) => {
     cart.forEach((item) => {
-      if (item._id === id) {
-        item.quantity += 1;
-      }
+      if (item._id === id) 
+              item.quantity += 1;
     });
-
     setCart([...cart]);
     addToCart(cart);
   };
@@ -76,7 +74,7 @@ function Cart() {
     const { paymentID, address } = payment;
 
     //paypal
-    await axios.post(
+    await axios.post(apidomin+
       '/api/payment',
       { cart, paymentID, address },
       {
@@ -91,13 +89,13 @@ function Cart() {
   // hom qua lam toi day
   const Checkout = async (e) => {
     e.preventDefault();
-    await axios.get(
-      '/api/orders/checkout',
-      { cart },
-      {
-        headers: { Authorization: token },
-      }
-    );
+    // await axios.get(apidomin+
+    //   '/api/orders/checkout',
+    //   { cart },
+    //   {
+    //     headers: { Authorization: token },
+    //   }
+    // );
   };
 
   if (cart.length === 0)

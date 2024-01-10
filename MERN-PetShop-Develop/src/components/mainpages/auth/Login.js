@@ -5,7 +5,7 @@ import { MdLogin } from 'react-icons/md';
 import { TiStarburst } from 'react-icons/ti';
 import { BsFacebook } from 'react-icons/bs';
 import Logo from '../../headers/icon/logo-white-1.svg';
-
+import apidomin from '../../../api/config'
 function Login() {
     const [user, setUser] = useState({
         email: '',
@@ -20,10 +20,10 @@ function Login() {
     const loginSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/user/nlogin', { ...user });
-
+            await axios.post(apidomin+'/user/nlogin', { ...user });
+            let  response = axios.post(apidomin+'/user/nlogin', { ...user });
+            sessionStorage.setItem('refreshtoken',response.data.refreshtoken)
             localStorage.setItem('firstLogin', true);
-
             window.location.href = '/';
             localStorage.removeItem();
         } catch (err) {

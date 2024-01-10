@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import apidomin from './config'
 function OrderAPI(token) {
   const [order, setOrder] = useState([]);
   
@@ -14,7 +14,7 @@ function OrderAPI(token) {
   useEffect(() => {
     const getOrder = async () => {
       try {
-        const res = await axios.get('/api/orders');
+        const res = await axios.get(apidomin+'/api/orders');
         setOrder(res.data);
       } catch (err) {
         alert(err.response.data.msg);

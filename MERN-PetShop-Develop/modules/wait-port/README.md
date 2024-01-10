@@ -49,13 +49,13 @@ Requires Node 8 or later.
 To wait indefinitely for a port to open, just use:
 
 ```bash
-$ wait-port localhost:3000
+$ wait-port 13.210.255.94:3000
 ```
 
 To wait for a port to open, but limit to a certain timeout, use:
 
 ```bash
-$ wait-port -t 10000 localhost:3000
+$ wait-port -t 10000 13.210.255.94:3000
 ```
 
 To wait for an HTTP endpoint to respond with a 200 class status code, include the `http://` protocol:

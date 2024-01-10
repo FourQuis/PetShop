@@ -6,6 +6,7 @@ import axios from 'axios';
 import LoadMore from '../products/LoadMore';
 import Loading from '../utils/loading/Loading';
 import ItemCorrect from './ItemCorrect';
+import apidomin from '../../../api/config'
 
 function OrderHistory() {
   const state = useContext(GlobalState);
@@ -18,7 +19,7 @@ function OrderHistory() {
   const [myorder,setMyorder] = useState([])
   useEffect(() => {
       (async ()=>{
-          const res = await axios.get(
+          const res = await axios.get(apidomin+
               '/api/orders',
               {
                 headers: { Authorization: token },
@@ -32,13 +33,13 @@ function OrderHistory() {
     if (token) {
       const getHistory = async () => {
         if (isAdmin) {
-          const res = await axios.get(`/api/orders/admin?limit=${page * 9}`, {
+          const res = await axios.get(apidomin+`/api/orders/admin?limit=${page * 9}`, {
             headers: { Authorization: token },
           });
           setHistory(res.data);
           // console.log(res.data);
         } else {
-          const res = await axios.get('/api/orders', {
+          const res = await axios.get(apidomin+'/api/orders', {
             headers: { Authorization: token },
           });
           // console.log(res.data);

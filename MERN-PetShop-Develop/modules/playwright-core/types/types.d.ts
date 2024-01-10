@@ -12785,11 +12785,11 @@ export interface BrowserType<Unused = {}> {
      * it takes the base URL in consideration by using the
      * [`URL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) constructor for building the corresponding URL.
      * Unset by default. Examples:
-     * - baseURL: `http://localhost:3000` and navigating to `/bar.html` results in `http://localhost:3000/bar.html`
-     * - baseURL: `http://localhost:3000/foo/` and navigating to `./bar.html` results in
-     *   `http://localhost:3000/foo/bar.html`
-     * - baseURL: `http://localhost:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
-     *   `http://localhost:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000` and navigating to `/bar.html` results in `http://13.210.255.94:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo/` and navigating to `./bar.html` results in
+     *   `http://13.210.255.94:3000/foo/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
+     *   `http://13.210.255.94:3000/bar.html`
      */
     baseURL?: string;
 
@@ -14265,11 +14265,11 @@ export interface AndroidDevice {
      * it takes the base URL in consideration by using the
      * [`URL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) constructor for building the corresponding URL.
      * Unset by default. Examples:
-     * - baseURL: `http://localhost:3000` and navigating to `/bar.html` results in `http://localhost:3000/bar.html`
-     * - baseURL: `http://localhost:3000/foo/` and navigating to `./bar.html` results in
-     *   `http://localhost:3000/foo/bar.html`
-     * - baseURL: `http://localhost:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
-     *   `http://localhost:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000` and navigating to `/bar.html` results in `http://13.210.255.94:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo/` and navigating to `./bar.html` results in
+     *   `http://13.210.255.94:3000/foo/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
+     *   `http://13.210.255.94:3000/bar.html`
      */
     baseURL?: string;
 
@@ -15042,11 +15042,11 @@ export interface APIRequest {
      * take the base URL into consideration by using the
      * [`URL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) constructor for building the corresponding URL.
      * Examples:
-     * - baseURL: `http://localhost:3000` and sending request to `/bar.html` results in `http://localhost:3000/bar.html`
-     * - baseURL: `http://localhost:3000/foo/` and sending request to `./bar.html` results in
-     *   `http://localhost:3000/foo/bar.html`
-     * - baseURL: `http://localhost:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
-     *   `http://localhost:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000` and sending request to `/bar.html` results in `http://13.210.255.94:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo/` and sending request to `./bar.html` results in
+     *   `http://13.210.255.94:3000/foo/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
+     *   `http://13.210.255.94:3000/bar.html`
      */
     baseURL?: string;
 
@@ -16157,11 +16157,11 @@ export interface Browser extends EventEmitter {
      * it takes the base URL in consideration by using the
      * [`URL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) constructor for building the corresponding URL.
      * Unset by default. Examples:
-     * - baseURL: `http://localhost:3000` and navigating to `/bar.html` results in `http://localhost:3000/bar.html`
-     * - baseURL: `http://localhost:3000/foo/` and navigating to `./bar.html` results in
-     *   `http://localhost:3000/foo/bar.html`
-     * - baseURL: `http://localhost:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
-     *   `http://localhost:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000` and navigating to `/bar.html` results in `http://13.210.255.94:3000/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo/` and navigating to `./bar.html` results in
+     *   `http://13.210.255.94:3000/foo/bar.html`
+     * - baseURL: `http://13.210.255.94:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
+     *   `http://13.210.255.94:3000/bar.html`
      */
     baseURL?: string;
 
@@ -19399,11 +19399,11 @@ export interface BrowserContextOptions {
    * it takes the base URL in consideration by using the
    * [`URL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL) constructor for building the corresponding URL.
    * Unset by default. Examples:
-   * - baseURL: `http://localhost:3000` and navigating to `/bar.html` results in `http://localhost:3000/bar.html`
-   * - baseURL: `http://localhost:3000/foo/` and navigating to `./bar.html` results in
-   *   `http://localhost:3000/foo/bar.html`
-   * - baseURL: `http://localhost:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
-   *   `http://localhost:3000/bar.html`
+   * - baseURL: `http://13.210.255.94:3000` and navigating to `/bar.html` results in `http://13.210.255.94:3000/bar.html`
+   * - baseURL: `http://13.210.255.94:3000/foo/` and navigating to `./bar.html` results in
+   *   `http://13.210.255.94:3000/foo/bar.html`
+   * - baseURL: `http://13.210.255.94:3000/foo` (without trailing slash) and navigating to `./bar.html` results in
+   *   `http://13.210.255.94:3000/bar.html`
    */
   baseURL?: string;
 

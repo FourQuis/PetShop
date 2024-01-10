@@ -814,7 +814,7 @@ declare module 'http' {
          *
          * setInterval(() => {
          *   // Adapting a keep-alive agent
-         *   http.get('http://localhost:3000', { agent }, (res) => {
+         *   http.get('http://13.210.255.94:3000', { agent }, (res) => {
          *     res.on('data', (data) => {
          *       // Do nothing
          *     });
@@ -831,7 +831,7 @@ declare module 'http' {
          *
          * function retriableRequest() {
          *   const req = http
-         *     .get('http://localhost:3000', { agent }, (res) => {
+         *     .get('http://13.210.255.94:3000', { agent }, (res) => {
          *       // ...
          *     })
          *     .on('error', (err) => {
@@ -1179,18 +1179,18 @@ declare module 'http' {
          * new URL(request.url, `http://${request.headers.host}`);
          * ```
          *
-         * When `request.url` is `'/status?name=ryan'` and `request.headers.host` is`'localhost:3000'`:
+         * When `request.url` is `'/status?name=ryan'` and `request.headers.host` is`'13.210.255.94:3000'`:
          *
          * ```console
          * $ node
          * > new URL(request.url, `http://${request.headers.host}`)
          * URL {
-         *   href: 'http://localhost:3000/status?name=ryan',
-         *   origin: 'http://localhost:3000',
+         *   href: 'http://13.210.255.94:3000/status?name=ryan',
+         *   origin: 'http://13.210.255.94:3000',
          *   protocol: 'http:',
          *   username: '',
          *   password: '',
-         *   host: 'localhost:3000',
+         *   host: '13.210.255.94:3000',
          *   hostname: 'localhost',
          *   port: '3000',
          *   pathname: '/status',

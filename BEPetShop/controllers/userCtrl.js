@@ -30,13 +30,13 @@ const userCtrl = {
       // Then create jsonwebtoken to authentication
       const accesstoken = createAccessToken({ id: newUser._id });
       const refreshtoken = createRefreshToken({ id: newUser._id });
-
+      // res.sessionStorage.setItem('refreshtoken',refreshtoken)
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
         path: '/user/refresh_token',
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7d
       });
-      res.json({ accesstoken });
+      res.json({ accesstoken,refreshtoken });
     } catch (err) {
       console.log(err.message);
       return res.status(500).json({ msg: err.message });
@@ -56,14 +56,12 @@ const userCtrl = {
       // If login success , create access token and refresh token
       const accesstoken = createAccessToken({ id: user._id });
       const refreshtoken = createRefreshToken({ id: user._id });
-
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
         path: '/user/refresh_token',
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7d
       });
-
-      res.json({ accesstoken });
+      res.json({ accesstoken , refreshtoken});
     } catch (err) {
       return res.status(500).json({ msg: err.message });
     }
@@ -71,6 +69,7 @@ const userCtrl = {
 
   logout: async (req, res) => {
     try {
+      // res.sessionStorage.removeItem('refreshtoken',refreshtoken)
       res.clearCookie('refreshtoken', { path: '/user/refresh_token' });
       return res.json({ msg: 'Logged out' });
     } catch (err) {
@@ -80,12 +79,13 @@ const userCtrl = {
 
   refreshToken: (req, res) => {
     try {
-      const rf_token = req.cookies.refreshtoken;
-      console.log(req.cookies.refreshtoken)
-      if (!rf_token)
+      // const rf_token = req.cookies.refreshtoken;
+      const tf_token = req.headers['authorization'];
+      console.log(tf_token)
+      if ((!tf_token))
         return res.status(400).json({ msg: 'Please Login or Register' });
 
-      jwt.verify(rf_token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+      jwt.verify(tf_token, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
         if (err)
           return res.status(400).json({ msg: 'Please Login or Register' });
 

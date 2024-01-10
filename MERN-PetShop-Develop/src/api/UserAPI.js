@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import apidomin from './config'
 
 function UserAPI(token) {
   const [isLogged, setIsLogged] = useState(false);
@@ -12,7 +13,7 @@ function UserAPI(token) {
     if (token) {
       const getUser = async () => {
         try {
-          const res = await axios.get('/user/infor', {
+          const res = await axios.get(apidomin+'/user/infor', {
             headers: { Authorization: token },
           });
           setDetail(res.data)
@@ -42,7 +43,7 @@ function UserAPI(token) {
     if (check) {
       setCart([...cart, { ...newProduct,quantity: 1 }]);
 
-      await axios.patch(
+      await axios.patch(apidomin+
         '/user/addcart',
         { cart: [...cart, { ...newProduct, quantity: 1 }] },
         {

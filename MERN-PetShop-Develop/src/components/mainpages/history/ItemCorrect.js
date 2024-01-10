@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GlobalState } from '../../../GlobalState';
 import axios from 'axios';
+import apidomin from '../../../api/config'
 
 const ItemCorrect = (items) => {
     const state = useContext(GlobalState);
@@ -29,7 +30,7 @@ const ItemCorrect = (items) => {
         if (window.confirm('Confirm this order?')) {
             setcheckdelivery(false);
             console.log(rs);
-            await axios.put(
+            await axios.put(apidomin+
                 '/api/delivery',
                 { ...rs },
                 {

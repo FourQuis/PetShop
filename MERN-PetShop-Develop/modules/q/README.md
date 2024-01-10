@@ -602,7 +602,7 @@ function requestOkText(url) {
 Below is an example of how to use this ``requestOkText`` function:
 
 ```javascript
-requestOkText("http://localhost:3000")
+requestOkText("http://13.210.255.94:3000")
 .then(function (responseText) {
     // If the HTTP response returns 200 OK, log the response text.
     console.log(responseText);

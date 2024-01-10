@@ -4,7 +4,7 @@ import axios from 'axios';
 import { TiStarburst } from 'react-icons/ti';
 import classNames from 'classnames/bind';
 import styles from './NRegister.module.scss';
-
+import apidomin from '../../../api/config'
 const cx = classNames.bind(styles);
 
 function NRegister() {
@@ -24,10 +24,9 @@ function NRegister() {
     const registerSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/user/register', { ...user });
-
+            let  response = await axios.post(apidomin+'/user/register', { ...user });
+            sessionStorage.setItem('refreshtoken',response.data.refreshtoken)
             localStorage.setItem('firstLogin', true);
-
             window.location.href = '/';
         } catch (err) {
             alert(err.response.data.msg);

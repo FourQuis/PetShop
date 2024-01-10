@@ -2,7 +2,7 @@ import React, { useContext, useRef } from 'react';
 import { GlobalState } from '../../../GlobalState';
 import searchIcon from './download.png';
 import axios from 'axios';
-
+const apidomins = 'http://3.106.209.73:8080';
 function Filters() {
   const state = useContext(GlobalState);
   const [categories] = state.categoriesAPI.categories;
@@ -36,7 +36,7 @@ function Filters() {
         formData.append('image', file);
       
         // Update the URL to your Flask server endpoint for file uploads
-      const response =  await axios.post('http://localhost:5001/api/upload', formData);
+      let response =  await axios.post(apidomins+'/api/uploads', formData);
       setSearch(response.data.predicted_class)
         console.log('Image uploaded successfully');
     } catch (error) {
@@ -60,7 +60,7 @@ function Filters() {
         type="text"
         value={search}
         placeholder="Tìm kiếm sản phẩm"
-        onChange={(e) => setSearch(e.target.value.toLowerCase())}
+        onChange={(e) => setSearch(e.target.value)}
       />
 
       {/* Hidden file input for image upload */}

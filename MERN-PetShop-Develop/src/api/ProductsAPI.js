@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import apidomin from './config'
 function ProductsAPI() {
   const [products, setProducts] = useState([]);
   const [callback, setCallback] = useState(false);
@@ -12,7 +12,7 @@ function ProductsAPI() {
 
   useEffect(() => {
     const getProducts = async () => {
-      const res = await axios.get(
+      const res = await axios.get(apidomin+
         `/api/products?limit=${
           page * 9
         }&${category}&${sort}&title[regex]=${search}`

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { GlobalState } from '../../../GlobalState';
 import { gsap } from 'gsap';
 import axios from 'axios';
-
+import apidomin from '../../../api/config'
 function UserInfo() {
   const state = useContext(GlobalState)
   const [isAdmin] = state.userAPI.isAdmin;
@@ -20,8 +20,9 @@ function UserInfo() {
   };
 
   const logoutUser = async () => {
-    await axios.get('/user/logout');
+    await axios.get(apidomin+'/user/logout');
     localStorage.removeItem('firstLogin');
+    sessionStorage.removeItem('refreshtoken')
     window.location.href = '/';
   };
   return (

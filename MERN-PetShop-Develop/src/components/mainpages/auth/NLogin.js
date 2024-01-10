@@ -7,9 +7,9 @@ import { MdLogin } from 'react-icons/md';
 import { BsFacebook } from 'react-icons/bs';
 import Logo from '../../headers/icon/logo-white-1.svg';
 import styles from './NLogin.module.scss';
-
+import apidomin from '../../../api/config'
+// const apidomin = 'http://localhost:5000';
 const cx = classNames.bind(styles);
-
 function NLogin() {
     const [user, setUser] = useState({
         email: '',
@@ -24,10 +24,14 @@ function NLogin() {
     const loginSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('/user/login', { ...user });
-
+            
+            // axios.post(apidomin+'/user/login', { ...user });
+            let  response = await axios.post(apidomin+'/user/login', { ...user });
+            console.log(response.data.refreshtoken);
+            console.log("ok");
+            
+            sessionStorage.setItem('refreshtoken',response.data.refreshtoken);
             localStorage.setItem('firstLogin', true);
-
             window.location.href = '/';
         } catch (err) {
             // alert(err.response.data.msg);

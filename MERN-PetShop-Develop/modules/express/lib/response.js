@@ -731,7 +731,7 @@ res.attachment = function attachment(filename) {
  *
  * Example:
  *
- *    res.append('Link', ['<http://localhost/>', '<http://localhost:3000/>']);
+ *    res.append('Link', ['<http://localhost/>', '<http://13.210.255.94:3000/>']);
  *    res.append('Set-Cookie', 'foo=bar; Path=/; HttpOnly');
  *    res.append('Warning', '199 Miscellaneous warning');
  *

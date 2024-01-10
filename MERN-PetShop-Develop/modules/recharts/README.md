@@ -83,7 +83,7 @@ To examine the demos in your local build, execute:
 $ npm run[-script] demo
 ```
 
-and then browse to http://localhost:3000.
+and then browse to http://13.210.255.94:3000.
 
 ## Storybook
 

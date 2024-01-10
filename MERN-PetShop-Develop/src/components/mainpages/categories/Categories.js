@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import {GlobalState} from '../../../GlobalState'
 import axios from 'axios'
+import apidomin from '../../../api/config'
 
 function Categories() {
     const state = useContext(GlobalState)
@@ -15,12 +16,12 @@ function Categories() {
         e.preventDefault()
         try {
             if(onEdit){
-                const res = await axios.put(`/api/category/${id}`, {name: category}, {
+                const res = await axios.put(apidomin+`/api/category/${id}`, {name: category}, {
                     headers: {Authorization: token}
                 })
                 alert("Success")
             }else{
-                const res = await axios.post('/api/category', {name: category}, {
+                const res = await axios.post(apidomin+'/api/category', {name: category}, {
                     headers: {Authorization: token}
                 })
                 alert("Success")
@@ -42,7 +43,7 @@ function Categories() {
 
     const deleteCategory = async id =>{
         try {
-            const res = await axios.delete(`/api/category/${id}`, {
+            const res = await axios.delete(apidomin+`/api/category/${id}`, {
                 headers: {Authorization: token}
             })
             alert(res.data.msg)

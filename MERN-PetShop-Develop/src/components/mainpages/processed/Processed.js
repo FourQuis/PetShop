@@ -4,6 +4,8 @@ import { GlobalState } from '../../../GlobalState';
 import './processed.css';
 import axios from 'axios';
 import Loading from '../utils/loading/Loading';
+import apidomin from '../../../api/config'
+
 const Processed = () => {
     const state = useContext(GlobalState);
     //console.log(state)
@@ -29,7 +31,7 @@ const Processed = () => {
         //paypal
         if (token) {
             setLoading(true);
-            const res = await axios.post(
+            const res = await axios.post(apidomin+
                 '/api/cart/checkout',
                 { order_id },
                 {

@@ -10,7 +10,7 @@ import { HiOutlineLogout } from 'react-icons/hi';
 import { AiOutlineHistory } from 'react-icons/ai';
 import Logo from './icon/logo-petsh.svg';
 import { gsap } from 'gsap';
-
+import apidomin from '../../api/config'
 function Header() {
     const state = useContext(GlobalState);
     const [isLogged] = state.userAPI.isLogged;
@@ -30,7 +30,8 @@ function Header() {
     };
 
     const logoutUser = async () => {
-        await axios.get('/user/logout');
+        await axios.get(apidomin+'/user/logout');
+        sessionStorage.removeItem('refreshtoken');
         localStorage.removeItem('firstLogin');
         window.location.href = '/';
     };

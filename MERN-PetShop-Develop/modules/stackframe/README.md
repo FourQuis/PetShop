@@ -20,7 +20,7 @@ Written to closely resemble StackFrame representations in [Gecko](http://mxr.moz
 var stackFrame = new StackFrame({
     functionName: 'funName',
     args: ['args'],
-    fileName: 'http://localhost:3000/file.js',
+    fileName: 'http://13.210.255.94:3000/file.js',
     lineNumber: 1,
     columnNumber: 3288, 
     isEval: true,
@@ -37,9 +37,9 @@ stackFrame.args              // => ["args"]
 stackFrame.setArgs([])
 stackFrame.getArgs()         // => []
 
-stackFrame.fileName          // => 'http://localhost:3000/file.min.js'
-stackFrame.setFileName('http://localhost:3000/file.js')  
-stackFrame.getFileName()     // => 'http://localhost:3000/file.js'
+stackFrame.fileName          // => 'http://13.210.255.94:3000/file.min.js'
+stackFrame.setFileName('http://13.210.255.94:3000/file.js')  
+stackFrame.getFileName()     // => 'http://13.210.255.94:3000/file.js'
 
 stackFrame.lineNumber        // => 1
 stackFrame.setLineNumber(325)
@@ -65,7 +65,7 @@ stackFrame.evalOrigin                         // => StackFrame({functionName: 'w
 stackFrame.setEvalOrigin({functionName: 'evalFn', fileName: 'anonymous'})
 stackFrame.getEvalOrigin().getFunctionName()  // => 'evalFn'
 
-stackFrame.toString() // => 'funName(args)@http://localhost:3000/file.js:325:20'
+stackFrame.toString() // => 'funName(args)@http://13.210.255.94:3000/file.js:325:20'
 ```
 
 ## Browser Support

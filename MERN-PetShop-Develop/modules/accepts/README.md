@@ -122,7 +122,7 @@ http.createServer(app).listen(3000)
 
 You can test this out with the cURL program:
 ```sh
-curl -I -H'Accept: text/html' http://localhost:3000/
+curl -I -H'Accept: text/html' http://13.210.255.94:3000/
 ```
 
 ## License

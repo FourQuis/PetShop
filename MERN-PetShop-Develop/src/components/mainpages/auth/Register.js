@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { TiStarburst } from 'react-icons/ti';
 import { MdLogin } from 'react-icons/md';
+import apidomin from '../../../api/config'
 
 function Register() {
   const [user, setUser] = useState({
@@ -19,10 +20,10 @@ function Register() {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/user/register', { ...user });
-
+      await axios.post(apidomin+'/user/register', { ...user });
+      let  response = axios.post(apidomin+'/user/register', { ...user });
+      sessionStorage.setItem('refreshtoken',response.data.refreshtoken)
       localStorage.setItem('firstLogin', true);
-
       window.location.href = '/';
     } catch (err) {
       alert(err.response.data.msg);

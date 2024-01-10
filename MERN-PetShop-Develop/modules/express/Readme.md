@@ -87,7 +87,7 @@ $ npm install
 $ npm start
 ```
 
-  View the website at: http://localhost:3000
+  View the website at: http://13.210.255.94:3000
 
 ## Philosophy
 

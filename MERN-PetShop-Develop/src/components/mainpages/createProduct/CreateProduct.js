@@ -4,6 +4,7 @@ import { GlobalState } from '../../../GlobalState';
 import Loading from '../utils/loading/Loading';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import apidomin from '../../../api/config'
 
 const initialState = {
     title: '',
@@ -92,7 +93,7 @@ function CreateProduct() {
             formData.append('file', file);
 
             setLoading(true);
-            const res = await axios.post('/api/upload', formData, {
+            const res = await axios.post(apidomin+'/api/upload', formData, {
                 headers: {
                     'content-type': 'multipart/form-data',
                     Authorization: token,
@@ -109,7 +110,7 @@ function CreateProduct() {
         try {
             if (!isAdmin) return alert('you not admin');
             setLoading(true);
-            await axios.post(
+            await axios.post(apidomin+
                 '/api/destroy',
                 { public_id: images.public_id },
                 {
@@ -159,7 +160,7 @@ function CreateProduct() {
 
             if (onEdit) {
                 console.log(edit);
-                await axios.put(
+                await axios.put(apidomin+
                     `/api/products/${product._id}`,
                     { ...edit, images },
                     {
@@ -168,7 +169,7 @@ function CreateProduct() {
                 );
             } else {
                 console.log(rs);
-                await axios.post(
+                await axios.post(apidomin+
                     '/api/products',
                     { ...rs, images },
                     {

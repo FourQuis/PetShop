@@ -15,7 +15,7 @@ CORS(app)  # Enable CORS for all routes
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
 model = tf.keras.models.load_model(
-    'model.h5',
+    '20240104-14071704352020-all-images.h5',
     custom_objects={'KerasLayer': hub.KerasLayer}
 )
 IMG_SIZE = 224
@@ -29,7 +29,7 @@ def process_image(file):
 @app.route('/')
 def index():
     return render_template('index.html')
-@app.route('/api/upload', methods=['POST','GET'])
+@app.route('/api/uploads', methods=['POST','GET'])
 def upload_image():
     print(request.files)
     if 'image' not in request.files:
@@ -50,4 +50,4 @@ def upload_image():
         "predicted_class": get_pred_label
     })
 if __name__ == '__main__':
-    app.run(debug=True,port=5001)
+    app.run(debug=True,port=8080)
